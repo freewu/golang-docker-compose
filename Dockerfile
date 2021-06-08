@@ -6,8 +6,8 @@ ENV GO111MODULE=on
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories && \
     apk add --no-cache upx ca-certificates tzdata
 COPY ./go.mod ./
-COPY ./go.sum ./
-RUN go mod download -x
+#COPY ./go.sum ./
+RUN go mod tidy
 
 COPY . .
 # RUN CGO_ENABLED=0 go build -ldflags '-s -w' -o demo-api
