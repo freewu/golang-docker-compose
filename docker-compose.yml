@@ -1,8 +1,8 @@
 version: "3"
 services:
-  agent:
-    hostname: "agent"
-    container_name: agent
+  demo:
+    hostname: "demo"
+    container_name: demo
     restart: always
     build:
       context: .
